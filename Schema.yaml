@@ -1,0 +1,35 @@
+x-wso2-disable-security: true
+openapi: 3.0.1
+info:
+  title: 'default-endpoint'
+  version: 1.0.0
+x-wso2-disable-security: true
+servers:
+  - url: /
+paths:
+  /*:
+    get:
+      operationId: operation1_get_default
+      responses:
+        '200':
+          description: Ok
+    put:
+      operationId: operation1_put_default
+      responses:
+        '200':
+          description: Ok
+    post:
+      operationId: operation1_post_default
+      responses:
+        '200':
+          description: Ok
+    delete:
+      operationId: operation1_delete_default
+      responses:
+        '200':
+          description: Ok
+    patch:
+      operationId: operation1_patch_default
+      responses:
+        '200':
+          description: Ok
