@@ -17,8 +17,7 @@ mcp = FastMCP("BiteWise")
 
 
 
-NUTRITIONIX_APP_ID = os.getenv("NUTRITIONIX_APP_ID", "9a715abc")
-NUTRITIONIX_API_KEY = os.getenv("NUTRITIONIX_API_KEY", "3623da3406bde9a73b9ca40ab28c4ce0")
+
 
 @mcp.tool()
 async def get_nutrition_info(query: str) -> dict:
@@ -201,8 +200,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run MCP SSE-based server')
     parser.add_argument('--host', default='0.0.0.0', help='Host to bind to')
     parser.add_argument('--port', type=int, default=8080, help='Port to listen on')
-    args = parser.parse_args()
+    parser.add_argument('--nutritionix-app-id', help='Nutritionix App ID')
+    parser.add_argument('--nutritionix-api-key', help='Nutritionix API Key')
 
+    args = parser.parse_args()
+    global NUTRITIONIX_APP_ID 
+    NUTRITIONIX_APP_ID = args.nutritionix_app_id or os.getenv("NUTRITIONIX_APP_ID", "9a715abc")
+    global NUTRITIONIX_API_KEY 
+    NUTRITIONIX_API_KEY = args.nutritionix_api_key or os.getenv("NUTRITIONIX_API_KEY", "")
     # Create and run the Starlette application
     starlette_app = create_starlette_app(mcp_server, debug=True)
     uvicorn.run(starlette_app, host=args.host, port=args.port)
