@@ -69,6 +69,7 @@ async def homepage(request: Request) -> HTMLResponse:
     <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name='mcp-verification' content='lC4T3aAtTGP-DVEf_R2sqomgtp5D5obseYB4cxFUO3I'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MCP Server</title>
         <style>
