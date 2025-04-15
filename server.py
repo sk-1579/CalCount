@@ -105,7 +105,7 @@ async def homepage(request: Request) -> HTMLResponse:
     </head>
     <body>
         <h1>MCP Server</h1>
-        
+        <img src="http://nanda-registry.com/api/v1/verification/badge/0e6bcad8-33c1-499d-9a6b-f86e93d6ca8f/" alt="Verified MCP Server" />
         <p>Server is running correctly!</p>
         
         <button id="connect-button">Connect to SSE</button>
