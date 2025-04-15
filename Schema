@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  title: SSE API
+  version: 1.0.0
+x-wso2-disable-security: true
+paths:
+  /sse:
+    get:
+      responses:
+        '200':
+          description: OK
